@@ -3,9 +3,11 @@ Dokuwiki Ruby API
 
 A simple API to interact with you Dokuwiki installation. Add and delete users in the Dokuwiki users authentication config file.  
  
-require 'Dokuwiki' 
-#Dokuwiki.add_user("jonny", "secret", "Jonny Kula", "jonny@kula.se")
-#Dokuwiki.delete_user!("jonny")
-#Dokuwiki.user_exists?("jonny")
+require 'Dokuwiki'
+
+@d = Dokuwiki.new() #path to users.auth.php single argument optional
+@d.add_user("jonny", "secret", "Jonny Kula", "jonny@kula.se") #=> true/false
+@d.delete_user!("jonny") #=> true/false
+@d.user_exists?("jonny") #=> true/false
  
 Copyright (c) 2009 Jonas Arnklint, released under the MIT license

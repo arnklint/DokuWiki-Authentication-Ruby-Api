@@ -60,7 +60,7 @@ if __FILE__ == $0
   
   class DokuwikiTest < Test::Unit::TestCase
     def setup
-      @tmpfile = "/Users/jonas/Desktop/iwiki/conf/users.auth.txt"
+      @tmpfile = "/path/to/conf/users.auth.txt"
       @d = Dokuwiki.new(@tmpfile)      
       @user1 = ['jonny', {:password => "jonas", :email => "jonny", :name => "jonny banan"}]
     end
@@ -99,8 +99,3 @@ if __FILE__ == $0
 
   end
 end
-
-# @d = Dokuwiki.new() #path to users.auth.php single argument optional
-# @d.add_user("jonny", "secret", "Jonny Kula", "jonny@kula.se") #=> true/false
-# @d.delete_user!("jonny") #=> true/false
-# @d.user_exists?("jonny") #=> true/false
