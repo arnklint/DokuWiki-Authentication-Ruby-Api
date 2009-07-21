@@ -6,7 +6,7 @@ A simple API to interact with you Dokuwiki installation. Add and delete users in
 require 'Dokuwiki'
 
 @d = Dokuwiki.new() #path to users.auth.php single argument optional
-@d.add_user("jonny", "secret", "Jonny Kula", "jonny@kula.se") #=> true/false
+@d.add_user("jonny", :password => "secret", :name => "Jonny Kula", :email => "jonny@kula.se", :group => "user") #=> true/false
 @d.delete_user!("jonny") #=> true/false
 @d.user_exists?("jonny") #=> true/false
  
